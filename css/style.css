@@ -377,7 +377,7 @@ footer .highlight{
 }
 
 
-@media (max-width: 576px) { 
+@media only screen and (max-device-width: 576px) { 
 
 	/*porto*/
 	#porto{
@@ -681,13 +681,14 @@ footer .highlight{
 
  }
 
-@media (max-width: 768px) { 
+ @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
 
+}
 
- }
-
-
-@media (max-width: 992px) {  }
+@media (max-width: 992px) { }
 
 
 @media (max-width: 1200px) {  }
