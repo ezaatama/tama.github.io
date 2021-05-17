@@ -26,10 +26,11 @@ body{
 	color:white;
 }
 
+
 /*navbar*/
 header{
 	background-color: black;
-	padding-top: 30px;
+	/*padding-top: 30px;*/
 	min-height: 70px;
 }
 
@@ -48,6 +49,11 @@ header h1{
 
 header #branding h1{
 	margin: 0;
+	color: white;
+}
+
+header #branding h1 a{
+	text-decoration: none;
 	color: white;
 }
 
@@ -268,44 +274,157 @@ h4.title{
 	margin-left: 20px;
 }
 
-.cv h1{
-	color: black;
-	text-align: center;
-	margin-top: 50px;
-	margin-bottom: 50px;
+/*halaman about*/
+
+/*resume content*/
+#resume{
+	padding: 100px 0;
 }
 
-#resume h2{
+#resume .title{
 	color: black;
-	text-align: justify;
-	font-size: 30px;
-	float: left;
-	margin-left: 50px;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#resume .title::before{
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 240px;
+	width: 180px;
+	height: 3px;
+	background-color: #111;
+	transform: translateX(-50%);
+}
+
+#resume .title::after{
+	content: "Who I am";
+	position: absolute;
+	left: 50%;
+	font-size: 20px;
+	color: #cc3208;
+	top: 220px;
+	padding: 5px;
+	background-color: #fff;
+	transform: translateX(-50%);
+}
+
+#resume .about-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#resume .about-content .left{
+	width: 45%;
+}
+
+#resume .about-content .left img{
+	height: 400px;
+	width: 400px;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+#resume .about-content .right{
+	width: 55%;
+}
+
+#resume .about-content .right .text{
+	font-size: 25px;
+	font-weight: 600;
 	margin-bottom: 10px;
 }
 
-#resume p{
-	color: black;
+#resume .about-content .right p{
 	text-align: justify;
-	font-size: 18px;
-	float: left;
-	margin-left: 50px;
 }
 
-#resume ul{
-	float: left;
-	margin-top: 10px;
-	padding: 0 20px 0 20px;
+#resume .about-content .right .highlight{
+	color: #cc3208;
 }
 
-#resume li{
-	padding: 0 20px 0 20px;
-	margin-left: 50px;
-	color:black;
+/*experience content*/
+
+#experience{
+	background: black;
+	height: auto;
+	margin-bottom: 20px;
+	padding: 20px;
 }
 
-#resume img{
-	margin-bottom:20px;
+#experience .title{
+	color: white;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 60px;
+	padding-top: 40px;
+	text-align: center;
+}
+
+#experience .sub-title{
+	color: white;
+	font-size: 30px;
+	font-weight: 500;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+
+#experience .card{
+	background: #c0c0c0;
+	padding: 40px;
+	height: auto;
+}
+
+#experience .date{
+	display: flex;
+}
+
+#experience .date > i{
+	font-size: 20px;
+	margin-top: 5px;
+}
+
+#experience .date > p{
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+h1.education{
+	color: #cc3208;
+	font-size: 23px;
+}
+
+/*certificate content*/
+#certificate .title{
+	color: black;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.cert-content .owl-carousel .owl-item img {
+    height: 250px;
+}
+
+.cert-content .owl-carousel .owl-item img:hover {
+    transform: scale(.9);
+    transition: 0.5s;
+}
+
+.cert-content .item .highlight{
+    border:3px solid #e8491d;
+    border-radius: 0 15px 15px 0;
+    background-color: #e8491d;
+	color: white;
+    width: 50%;
 }
 
 /*intro*/
@@ -387,7 +506,7 @@ footer .highlight{
 }
 
 
-@media only screen and (max-width: 576px) { 
+@media only screen and (max-width: 425px) { 
 
 	/*porto*/
 	#porto{
@@ -429,7 +548,7 @@ footer .highlight{
 	}
 	
 	#intro h1{
-		margin-top: -170px;
+		margin-top: -220px;
 		font-size: 25px;
 		float: right;
 		margin-right: 20px;
@@ -438,7 +557,7 @@ footer .highlight{
 	#intro h2{
 		color: #e8491d;
 		float: right;
-		margin-top: -140px;
+		margin-top: -190px;
 		font-size: 20px;
 		margin-right: 30px;
 	}
@@ -447,7 +566,7 @@ footer .highlight{
 		text-align: justify;
 		font-size: 11px;
 		width: 210px;
-		margin-top: -110px;
+		margin-top: -160px;
 		float: right;
 		margin-right: 30px;
 	}
@@ -473,7 +592,6 @@ footer .highlight{
 		height: 30px;
 		font-family: helvetica, sans-serif;
 		font-size: 13px;
-		width: 125px;
 		color: #fff;
 		display: block;
 		text-decoration: none;
@@ -696,11 +814,410 @@ footer .highlight{
 		background: #28bea8;
 	}
 
+	#resume .about-content .column{
+		width: 100%;
+	}
+
+	#resume .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	
+	#resume .about-content .left img{
+		height: 300px;
+		width: 300px;
+	}
+	
+	#resume .about-content .right{
+		flex: 100%;
+	}
+	
+	#resume .about-content .right .text{
+		font-size: 25px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	
+	#resume .about-content .right p{
+		text-align: justify;
+	}
+	
+	#resume .about-content .right .highlight{
+		color: #cc3208;
+	}
+
  }
 
- @media (max-width: 768px)  {
+ @media only screen and (min-width: 450px) and (max-width: 768px) { 
 
-}
+	/*porto*/
+	#porto{
+		background: lightgrey;
+		height:auto;
+	}
+
+	.featured h1{
+		text-align: center;
+		color: black;
+		margin-top: 30px;
+		font-size: 50px;
+	}
+
+	.featured .highlight{
+		color: #e8491d;
+		font-weight: bold;
+	}
+
+	#porto nav{
+		margin-top: 20px;
+		font-size: 20px;
+	}
+
+	#intro{
+		background-color: black;
+		height:300px;
+	}
+	
+	.pict{
+		width: auto;
+		float:left;
+		margin-left: -20px;
+	}
+
+	.pict img{
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	#intro h1{
+		margin-top: 20px;
+		font-size: 25px;
+		float: right;
+		margin-right: 20px;
+	}
+
+	#intro h2{
+		color: #e8491d;
+		float: right;
+		font-size: 20px;
+		margin-right: 30px;
+	}
+	
+	#intro p{
+		text-align: justify;
+		font-size: 11px;
+		width: 210px;
+		float: right;
+		margin-right: 30px;
+	}
+
+	/*tombol*/
+	.tombol{
+		margin-top: -20px;
+		float: right;
+		display: flex;
+		padding: 0;
+	}
+	
+	.animasi{
+		transition: all 0.1s;
+		-webkit-transition: all 0.1s;
+	}
+	
+	.tombol-aktif{
+		padding: 5px 20px;
+		text-align: center;
+		border-radius: 10px;
+		margin:10px;
+		height: 30px;
+		font-family: helvetica, sans-serif;
+		font-size: 13px;
+		color: #fff;
+		display: block;
+		text-decoration: none;
+	}
+	
+	.oren{
+		background-color: #e8491d;
+		border-bottom: 5px solid #cc3208;
+		text-shadow: 0px -2px #cc3208;
+	}
+	
+	.tombol-aktif:active{
+		transform: translate(100px, 52px);
+		-webkit-transform: translate(0px, 5px);
+		border-bottom: 1px;
+	}
+	.tombol-aktif:hover{
+		color: yellow;
+	}
+	
+	.light{
+		background-color: transparent;
+		border: 2px solid #cc3208;
+		margin-left: 10px;
+	}
+
+	/*filter baru*/
+	ul.filters{
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 30px 0;
+	}
+
+	ul.filters > li{
+		list-style: none;
+		display: inline-block;
+	}
+
+	ul.filters > li > a{
+		display: block;
+		color: #434e5e;
+		text-decoration: none;
+		padding: 5px 20px;
+	}
+
+	ul.filters > li > a:hover{
+		background-color: #e6e9ed;
+	}
+
+	ul.filters > li.active > a{
+		color: #fff;
+		background-color: #e8491d;
+	}
+
+	.card{
+		position: relative;
+		margin-bottom: 50px;
+		height: 300px;
+		color: #000;
+		border-radius: 0;
+		border: 1px solid #eee;
+		background-color: #fff;
+		box-shadow: 1px 1px 1.5px rgba(0,0,0,0.075);
+	}
+
+	.card-head{
+		position: relative;
+		overflow: hidden;
+	}
+
+	.card-head .card-img{
+		width: 100%;
+		height: 200px;
+	}
+
+
+	.card-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		background-color: rgba(67,78,94,0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color :#fff;
+		-webkit-transition: ease-in-out 0.2s;
+		-moz-transition: ease-in-out 0.2s;
+		-ms-transition: ease-in-out 0.2s;
+		transition: ease-in-out 0.2s;
+	}
+
+	.card-hover{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #e8491d;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		flex-direction: column;
+		box-sizing: border-box;
+		padding: 30px;
+		-webkit-transition: ease-in-out 0.2s;
+		-moz-transition: ease-in-out 0.2s;
+		-ms-transition: ease-in-out 0.2s;
+		transition: ease-in-out 0.2s;
+	}
+
+	.card-body{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	h4.title{
+		color: #434e5e;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+	}
+
+	.card-btn{
+		margin-bottom: -40px;
+		font-size: 0.9rem;
+		background-color: #fff;
+		color: #222;
+		border: 1px solid #eee;
+		border-radius: 0;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.card-btn:hover{
+		background-color: #28bea8;
+		color: #fff;
+	}
+
+	/*sosmed*/
+	#sosmed{
+		background-color: black;
+		height:420px;
+	}
+	
+	.social{
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 30px 0;
+	}
+	
+	ul.social{
+		margin-top:30px;
+	}
+	
+	.social > li{
+		list-style: none;
+		display: inline-block;
+		font-size: 50px;
+		margin: 0px;
+	}
+	
+	.social > li > a{
+		display: block;
+		color: #434e5e;
+		text-decoration: none;
+		padding: 5px 20px;
+	}
+	
+	.social > li > a:hover{
+		background-color: #e6e9ed;
+		border-radius: 10px;
+	}
+	
+	.quotes p{
+		font-size: 20px;
+		margin-top: 50px;
+		text-align: center;
+	}
+	
+	footer{
+		background-color: black;
+		height:60px;
+	}
+	
+	footer #penutup h1{
+		text-align: center;
+		font-size: 18px;
+		margin: auto;
+		color: white;
+	}
+	
+	footer .highlight{
+		color: #e8491d;
+		font-weight: bold;
+	}
+
+	#btnScrollToTop{
+		position: fixed;
+		z-index: 10;
+		right: 5px;
+		bottom: 90px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: none;
+		background: #e8491d;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+		color:#fff;
+		outline: none;
+		cursor: pointer;
+	}
+	
+	#btnScrollToTop:active{
+		background: #28bea8;
+	}
+
+	/*resume*/
+	#resume .about-content .column{
+		width: 100%;
+	}
+
+	#resume .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	
+	#resume .about-content .left img{
+		height: 300px;
+		width: 300px;
+	}
+	
+	#resume .about-content .right{
+		flex: 100%;
+	}
+	
+	#resume .about-content .right .text{
+		font-size: 25px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	
+	#resume .about-content .right p{
+		text-align: justify;
+	}
+	
+	#resume .about-content .right .highlight{
+		color: #cc3208;
+	}
+
+	/*certificate*/
+	#certificate .title{
+		color: black;
+		font-size: 40px;
+		font-weight: 500;
+		margin-bottom: 60px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+	
+	.cert-content .owl-carousel .owl-item img {
+		height: 200px;
+	}
+	
+	.cert-content .owl-carousel .owl-item img:hover {
+		transform: scale(.9);
+		transition: 0.5s;
+	}
+	
+	.cert-content .item .highlight{
+		border:3px solid #e8491d;
+		border-radius: 0 15px 15px 0;
+		background-color: #e8491d;
+		color: white;
+		width: 50%;
+	}
+	
+
+ }
 
 @media (max-width: 992px) { }
 
